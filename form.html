@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Sample form</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/public/css/form.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <form id="signup" class="form" method="post" name="registration" action="/">
+            <h1><strong>EBOLA VIRUS RAPID CASE ADMISSION FORM</strong></h1>
+            <div class="form-field col-sm-3">
+                <label for="patientname" style="color: orange;">Patient Name:</label>
+                <input type="text" name="patientname" id="patientname" autocomplete="off" style="font-size: 16px;" onblur="checkPName()">
+            </div>
+
+            <div class="form-field col-sm-3 rows2">
+                <label for="etunumber" style="color: orange;">ETU Number:</label>
+                <input type="text" name="etunumber" id="etunumber" autocomplete="off" style="font-size: 16px;" onblur="checkENumber()">
+        </div>
+ 
+        <div class="form-field col-sm-2">
+            <label for="epiid" style="color: orangered;">EPI ID:</label>
+            <div class="radio" style="color: orange;">
+            <input type="checkbox" name="sex" id="sex1" autocomplete="off" value="male"/> <span>Male</span>
+            <input type="checkbox" name="sex" id="sex2" autocomplete="off" value="female"/> <span>Female</span>
+        </div>
+        </div>
+
+        <div class="form-field col-sm-3 rows3">
+            <label for="patientoccupation" style="color: orangered;">Patient Occupation:</label>
+            <div class="radio" style="color: orange;">
+            <input type="checkbox" name="occupation" id="occupation1" autocomplete="off" value="healthworker"/> <span>Health_Worker</span>
+            <input type="checkbox" name="occupation" id="occupation2" autocomplete="off" value="nonhealthworker"/> <span>Non_Health_Worker</span>
+        </div>
+        </div>
+
+            <div class="form-field col-sm-3">
+                <label for="dateofbirth" style="color: orange;">Date of Birth:</label>
+                <input type="text" name="dateofbirth" id="dateofbirth" autocomplete="off" style="font-size: 16px;" onblur="checkDOBirth()">
+            </div>
+
+            <div class="form-field col-sm-3 rows4">
+                <label for="dateofadmission" style="color: orange;">Date of Admission:</label>
+                <input type="text" name="dateofadmission" id="dateofadmission" autocomplete="off" style="font-size: 16px;" onblur="checkDOAdmission()">
+            </div>
+
+            <div class="form-field col-sm-3">
+                <h6 style="color: orangered;">VITALS AT TRIAGE:</h6>
+                <label for="heartrate" style="color: orange;">Heart rate(bpm):</label>
+                <input type="text" name="heartrate" id="heartrate" autocomplete="off" style="font-size: 16px;" onblur="checkHRate()">
+            </div>
+
+            <div class="form-field col-sm-3 rows5">
+                <label for="respiratoryrate" style="color: orange;">Respiratory rate(/m in):</label>
+                <input type="text" name="respiratoryrate" id="respiratoryrate" autocomplete="off" style="font-size: 16px;" onblur="checkRRate()">
+            </div>
+
+            <div class="form-field col-sm-3">
+                <label for="bloodpressure" style="color: orange;">Blood pressure(mm Hg):</label>
+                <input type="text" name="bloodpressure" id="bloodpressure" autocomplete="off" style="font-size: 16px;" onblur="checkBPressure()">
+            </div>
+
+            <div class="form-field col-sm-3 rows5">
+                <label for="temperature" style="color: orange;">Temperature(C):</label>
+                <input type="text" name="temperature" id="temperature" autocomplete="off" style="font-size: 16px;" onblur="checkTemps()">
+            </div>
+
+            <div class="form-field col-sm-3">
+                <h6 style="color: orangered;">III. CLINICAL DETAILS(on admission):</h6>
+                <label for="firstsymptoms" style="color: orange;">Date onset first symptoms (dd/mm/yy):</label>
+                <input type="text" name="firstsymptoms" id="firstsymptoms" autocomplete="off" style="font-size: 16px;" onblur="checkFirst()">
+            </div>
+
+            <div class="form-field col-sm-3 rows5">
+                <label for="isolationunit" style="color: orange;">Date of admission to isolation unit:</label>
+                <input type="text" name="isolationunit" id="isolationunit" autocomplete="off" style="font-size: 16px;" onblur="checkIUnit()">
+            </div>
+
+            <div class="form-field col-sm-5">
+                <label for="yesorno" style="color: orangered;">If female patient, is she pregnant:</label>
+                <div class="radio col-sm-3" style="color: orange;">
+                <input type="checkbox" name="pregnancy" id="pregnancy1" autocomplete="off" value="yes"/> <span>Yes</span>
+                <input type="checkbox" name="pregnancy" id="pregnancy2" autocomplete="off" value="no"/> <span>No</span>
+            </div>
+            </div>
+
+            <div class="form-field col-sm-5 rows6">
+                <label for="bed" style="color: orangered;">Admitted to what type of bed:</label>
+                <div class="radio col-sm-4" style="color: orange;">
+                <input type="checkbox" name="bedtype" id="bedtype1" autocomplete="off" value="ward"/> <span>Ward</span>
+                <input type="checkbox" name="bedtype" id="bedtype2" autocomplete="off" value="icu"/> <span>ICU</span>
+            </div>
+            </div>
+
+            <div class="form-field col-sm-5" style="margin-left: 1000px; margin-top: -570px;">
+                <h6 style="color: orangered;">SIGNS AND SYMPTOMS (on presentation):</h6>
+                <label for="fevers" style="color: orange;">Fever:</label>
+                <div class="radio col-sm-6" style="color: orange;">
+                <input type="radio" name="fevr" id="fever1" autocomplete="off" value="yes"/> <span>Yes</span>
+                <input type="radio" name="fevr" id="fever2" autocomplete="off" value="no"/> <span>No</span>
+                <input type="radio" name="fevr" id="fever3" autocomplete="off" value="unknown"/> <span>Unknown</span>
+            </div>
+            </div>
+
+            <div class="form-field col-sm-5" style="margin-left: 1000px; margin-top: 0px;">
+                <label for="fatigues" style="color: orange;">Fatigue:</label>
+                <div class="radio col-sm-6" style="color: orange;">
+                <input type="radio" name="fatig" id="fatigue1" autocomplete="off" value="yes"/> <span>Yes</span>
+                <input type="radio" name="fatig" id="fatigue2" autocomplete="off" value="no"/> <span>No</span>
+                <input type="radio" name="fatig" id="fatigue3" autocomplete="off" value="unknown"/> <span>Unknown</span>
+            </div>
+            </div>
+
+            <div class="form-field col-sm-5" style="margin-left: 1000px; margin-top: 0px;">
+                <label for="weaknesses" style="color: orange;">Weakness:</label>
+                <div class="radio col-sm-6" style="color: orange;">
+                <input type="radio" name="weak" id="weakness1" autocomplete="off" value="yes"/> <span>Yes</span>
+                <input type="radio" name="weak" id="weakness2" autocomplete="off" value="no"/> <span>No</span>
+                <input type="radio" name="weak" id="weakness3" autocomplete="off" value="unknown"/> <span>Unknown</span>
+            </div>
+            </div>
+
+            <div class="form-field col-sm-5" style="margin-left: 1000px; margin-top: 0px;">
+                <label for="malaises" style="color: orange;">Malaise:</label>
+                <div class="radio col-sm-6" style="color: orange;">
+                <input type="radio" name="mal" id="malaise1" autocomplete="off" value="yes"/> <span>Yes</span>
+                <input type="radio" name="mal" id="malaise2" autocomplete="off" value="no"/> <span>No</span>
+                <input type="radio" name="mal" id="malaise3" autocomplete="off" value="unknown"/> <span>Unknown</span>
+            </div>
+            </div>
+
+            <div class="form-field col-sm-5" style="margin-left: 1000px; margin-top: 0px;">
+                <label for="myalgias" style="color: orange;">Myalgia:</label>
+                <div class="radio col-sm-6" style="color: orange;">
+                <input type="radio" name="mya" id="myalgia1" autocomplete="off" value="yes"/> <span>Yes</span>
+                <input type="radio" name="mya" id="myalgia2" autocomplete="off" value="no"/> <span>No</span>
+                <input type="radio" name="mya" id="myalgia3" autocomplete="off" value="unknown"/> <span>Unknown</span>
+            </div>
+            </div>
+
+            <div class="form-field col-sm-5" style="margin-left: 1000px; margin-top: 0px;">
+                <label for="anorexias" style="color: orange;">Anorexia:</label>
+                <div class="radio col-sm-6" style="color: orange;">
+                <input type="radio" name="ano" id="anorexia1" autocomplete="off" value="yes"/> <span>Yes</span>
+                <input type="radio" name="ano" id="anorexia2" autocomplete="off" value="no"/> <span>No</span>
+                <input type="radio" name="ano" id="anorexia3" autocomplete="off" value="unknown"/> <span>Unknown</span>
+            </div>
+            </div>
+
+            <div class="form-field col-sm-5" style="margin-left: 1000px; margin-top: 0px;">
+                <label for="sorethroats" style="color: orange;">Sore throat:</label>
+                <div class="radio col-sm-6" style="color: orange;">
+                <input type="radio" name="sore" id="sorethroat1" autocomplete="off" value="yes"/> <span>Yes</span>
+                <input type="radio" name="sore" id="sorethroat2" autocomplete="off" value="no"/> <span>No</span>
+                <input type="radio" name="sore" id="sorethroat3" autocomplete="off" value="unknown"/> <span>Unknown</span>
+            </div>
+            </div>
+
+            <div class="form-field col-sm-5" style="margin-left: 1000px; margin-top: 0px;">
+                <label for="pharyngeals" style="color: orange;">Pharyngeal:</label>
+                <div class="radio col-sm-6" style="color: orange;">
+                <input type="radio" name="phar" id="pharyngeal1" autocomplete="off" value="yes"/> <span>Yes</span>
+                <input type="radio" name="phar" id="pharyngeal2" autocomplete="off" value="no"/> <span>No</span>
+                <input type="radio" name="phar" id="pharyngeal3" autocomplete="off" value="unknown"/> <span>Unknown</span>
+            </div>
+            </div>
+
+            <div class="form-field col-sm-5" style="margin-left: 1000px; margin-top: 0px;">
+                <label for="sunkeneye" style="color: orange;">Sunken eyes:</label>
+                <div class="radio col-sm-6" style="color: orange;">
+                <input type="radio" name="sunken" id="sunkeneyes1" autocomplete="off" value="yes"/> <span>Yes</span>
+                <input type="radio" name="sunken" id="sunkeneyes2" autocomplete="off" value="no"/> <span>No</span>
+                <input type="radio" name="sunken" id="sunkeneyes3" autocomplete="off" value="unknown"/> <span>Unknown</span>
+            </div>
+            </div>
+            
+            <div class="form-field col-sm-2" style="margin-top: 55px; margin-left: 500px;">
+                <input type="submit" value="Submit" class="btn">
+            </div>
+
+            <div class="form-field col-sm-2" style="margin-top: -50px; margin-left: 750px;">
+                <input type="reset" value="Reset" class="btn">
+            </div>
+        </div>
+    </form>
+    
+</body>
+<script src="form.js"></script>
+</html>
