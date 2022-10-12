@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" href="main.css">
+  <title>Ufarm</title>
+</head>
+
+<body style="background-image: url(/Images/UFARM_login_page.png); background-size: cover;">
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid" style="margin-left: 70px; margin-top: 0px; font-size: 25px;">
+      <a class="navbar-brand" href="#"><img src="/Images/U+FARM+Logo.png" width="160px"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="../index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Products</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Blog</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Account
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="login.html">Login</a></li>
+              <li><a class="dropdown-item" href="register.html">Sign up</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  </div>
+
+  <div class="col-3" style="margin-left: 100px; margin-top: 50px;">
+    <div class="login">
+      <div class="card-header" style="font-size: 25px; text-align: center;">
+        Welcome to <img src="/Images/U+FARM+Logo.png" width="100px" style="margin-top: -12px;">
+      </div>
+      <br>
+      <p style="font-size: 20px;">Login to access your account</p>
+      <div class="card-body" style="margin-top: 25px; font-size: 20px;">
+        <form id="login" class="form" method="post" name="signin" action="/">
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1">
+          </div>
+          <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+          </div>
+          <button type="submit" class="btn btn-primary">Log In</button>
+        </form>
+        <br>
+        <p>Don't have an account with us? <br><a href="#" style="text-decoration: none;">Register now</a></p>
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+
+  <script src="bootstrap/js/bootstrap.bundle.js"></script>
+</body>
+
+</html>

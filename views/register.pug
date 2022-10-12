@@ -1,0 +1,65 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='stylesheet' href='bootstrap/css/bootstrap.css')
+  link(rel='stylesheet' href='main.css')
+  title Ufarm
+nav.navbar.navbar-expand-lg
+  .container-fluid(style='margin-left: 70px; margin-top: 0px; font-size: 25px;')
+    a.navbar-brand(href='#')
+      img(src='/Images/U+FARM+Logo.png' width='160px')
+    button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+      span.navbar-toggler-icon
+    #navbarSupportedContent.collapse.navbar-collapse
+      ul.navbar-nav.me-auto.mb-2.mb-lg-0
+        li.nav-item
+          a.nav-link.active(aria-current='page' href='../index.html') Home
+        li.nav-item
+          a.nav-link(href='#') Products
+        li.nav-item
+          a.nav-link(href='#') Services
+        li.nav-item
+          a.nav-link(href='#') Blog
+        li.nav-item.dropdown
+          a.nav-link.dropdown-toggle(href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false')
+            | Account
+          ul.dropdown-menu
+            li
+              a.dropdown-item(href='#') Login
+            li
+              a.dropdown-item(href='#') Sign up
+        li.nav-item
+          a.nav-link(href='#') Contact
+.col-3(style='margin-left: 100px; margin-top: 50px;')
+  .register
+    .card-header(style='font-size: 25px; text-align: center;')
+      | Welcome to 
+      img(src='/Images/U+FARM+Logo.png' width='100px' style='margin-top: -12px;')
+    br
+    p(style='font-size: 20px;') Register with us today
+    .card-body(style='margin-top: 25px; font-size: 20px;')
+      form#register.form(method='post' name='registration' action='/registering')
+        .mb-3
+          label.form-label(for='exampleInputEmail1') Email address
+          input#exampleInputEmail1.form-control(type='email' aria-describedby='emailHelp')
+          #emailHelp.form-text
+            | We&apos;ll never share your email with anyone else.
+        .mb-3
+          label.form-label(for='exampleInputEmail1') First Name
+          input#firstname.form-control(type='text' aria-describedby='emailHelp')
+        .mb-3
+          label.form-label(for='lastName') Last Name
+          input#lastname.form-control(type='text' aria-describedby='emailHelp')
+        .mb-3
+          label.form-label(for='exampleInputPassword1') Password
+          input#exampleInputPassword1.form-control(type='password')
+        .mb-3
+          label.form-label(for='exampleInputPassword1') Password (Again)
+          input#exampleInputPassword12.form-control(type='password')
+        .mb-3.form-check
+          input#exampleCheck1.form-check-input(type='checkbox')
+          label.form-check-label(for='exampleCheck1') Check me out
+        button.btn.btn-primary(type='submit') Submit
+script(src='bootstrap/js/bootstrap.bundle.js')

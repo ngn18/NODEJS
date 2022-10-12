@@ -1,14 +1,14 @@
 {
-  "name": "node_js_with_irene",
+  "name": "ufarm_project",
   "version": "1.0.0",
-  "description": "This is our first node project",
+  "description": "My U-farm project",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon index.js"
   },
   "keywords": [
-    "laerning",
+    "learning",
     "nodejs"
   ],
   "author": "Gerald",
