@@ -3,8 +3,8 @@ head
   meta(charset='UTF-8')
   meta(http-equiv='X-UA-Compatible' content='IE=edge')
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
-  link(rel='stylesheet' href='bootstrap/css/bootstrap.css')
-  link(rel='stylesheet' href='main.css')
+  link(rel='stylesheet' href='../UFARM PROJECT/public/css/bootstrapcss/bootstrap.css')
+  link(rel='stylesheet' href='../UFARM PROJECT/public/css/form.css')
   title Ufarm
 nav.navbar.navbar-expand-lg
   .container-fluid(style='margin-left: 70px; margin-top: 0px; font-size: 25px;')
@@ -43,21 +43,21 @@ nav.navbar.navbar-expand-lg
       form#register.form(method='post' name='registration' action='/registering')
         .mb-3
           label.form-label(for='exampleInputEmail1') Email address
-          input#exampleInputEmail1.form-control(type='email' aria-describedby='emailHelp')
+          input#exampleInputEmail1.form-control(type='email' aria-describedby='emailHelp' name='emailaddress')
           #emailHelp.form-text
             | We&apos;ll never share your email with anyone else.
         .mb-3
           label.form-label(for='exampleInputEmail1') First Name
-          input#firstname.form-control(type='text' aria-describedby='emailHelp')
+          input#firstname.form-control(type='text' aria-describedby='emailHelp' name='namefirst')
         .mb-3
           label.form-label(for='lastName') Last Name
-          input#lastname.form-control(type='text' aria-describedby='emailHelp')
+          input#lastname.form-control(type='text' aria-describedby='emailHelp' name='namelast')
         .mb-3
           label.form-label(for='exampleInputPassword1') Password
-          input#exampleInputPassword1.form-control(type='password')
+          input#exampleInputPassword1.form-control(type='password' name='pwd')
         .mb-3
           label.form-label(for='exampleInputPassword1') Password (Again)
-          input#exampleInputPassword12.form-control(type='password')
+          input#exampleInputPassword12.form-control(type='password' name='pwdagain')
         .mb-3.form-check
           input#exampleCheck1.form-check-input(type='checkbox')
           label.form-check-label(for='exampleCheck1') Check me out
