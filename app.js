@@ -2,7 +2,8 @@
 const express = require('express'); // Code used for importing express.
 const path = require('path');
 const mongoose = require('mongoose');
-const config = reuire('./config/db');
+const config = require('./config/db');
+const passport = require('passport');
 
 //express sesssion
 const expressSession = require('express-session')({
@@ -58,7 +59,8 @@ app.use('/user', registrationRoutes);
 
 
 app.get("/", (req, res) => {
-  res.sendFile(__dirname + "/register.html");
+  res.render("register", { title: "Home"});
+  // res.sendFile(__dirname + "/register.html");
 });
 
 // Rendering pug file
