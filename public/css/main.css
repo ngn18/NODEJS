@@ -1,0 +1,57 @@
+.navbar {
+    background-color: #ffffff00;
+    font-size: 20px;
+}
+
+.nav-link {
+    margin-right: 40px;
+}
+
+.container-fluid ul li a {
+    color: #a9a7a7;
+}
+
+body {
+    background-image: url(/Images/ufarm.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.container-fluid {
+    margin-top: 20px; 
+    margin-left: 750px;
+    width: 500px;
+}
+
+.caption {
+    font-size: 80px;
+    margin-top: 150px;
+    margin-left: 200px;
+    color: #414040;
+    font-weight: normal;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.form-control {
+    border-radius: 30px;
+    border-color: #bebdbd;
+}
+
+.btn-primary {
+    border-radius: 30px;
+    width: 250px;
+    height: 50px;
+    background-color: rgb(0, 132, 255);
+    color: #ffffff;
+    border: none;
+    box-shadow: 0px 0px 4px 4px rgb(60, 102, 253);
+    font-size: 20px;
+}
+
+.btn-primary:hover {
+    background-color: rgb(62, 162, 238);
+    color: #ffffff;
+    box-shadow: 0px 0px 4px 4px rgb(60, 185, 253);
+}
+
