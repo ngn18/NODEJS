@@ -6,14 +6,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="../UFARM PROJECT/public/css/bootstrapcss/bootstrap.css" />
-  <link rel="stylesheet" href="../UFARM PROJECT/public/css/form.css" />
+  <link rel="stylesheet" href="../UFARM PROJECT/public/css/main.css" />
   <title>Ufarm</title>
 </head>
 
-<body style="background-image: url(/Images/UFARM_login_page.png); background-size: cover;">
+<body style="background-image: url(/public/Images/UFARM_login_page.png); background-size: cover;">
   <nav class="navbar navbar-expand-lg">
     <div class="container-fluid" style="margin-left: 70px; margin-top: 0px; font-size: 25px;">
-      <a class="navbar-brand" href="#"><img src="/Images/U+FARM+Logo.png" width="160px"></a>
+      <a class="navbar-brand" href="/index.html"><img src="/public/Images/U+FARM+Logo.png" width="160px"></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -42,46 +42,92 @@
             </ul>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
+            <a class="nav-link" href="#">About</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <div class="col-3" style="margin-left: 100px; margin-top: 50px;">
+  <div class="col-6" style="margin-left: 100px; margin-top: 50px;">
     <div class="register">
       <div class="card-header" style="font-size: 25px; text-align: center;">
-        Welcome to <img src="/Images/U+FARM+Logo.png" width="100px" style="margin-top: -12px;">
+        Welcome to <img src="/public/Images/U+FARM+Logo.png" width="100px" style="margin-top: -12px;">
       </div>
       <br>
       <p style="font-size: 20px;">Register with us today</p>
           <div class="card-body" style="margin-top: 25px; font-size: 20px;">
-            <form id="register" class="form" method="post" name="registration" action="/registering">
-              <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Email address</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+            <form id="register" class="form" method="post" name="registration" action="/register">
+
+              <div class="row">
+              <div class="mb-3 col-sm-6">
+                <label for="email1" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="email" name="email" onblur="checkEmail();"/>
                 <div id="emailHelp" class="form-text">
                   We'll never share your email with anyone else.
                 </div>
               </div>
-              <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">First Name</label>
-                <input type="text" class="form-control" id="firstname" aria-describedby="emailHelp"/>
+
+              <div class="mb-3 col-sm-6">
+                <label for="ward" class="form-label">Ward</label>
+                <input type="text" class="form-control" id="ward" name="ward" onblur="checkWard();"/>
               </div>
-              <div class="mb-3">
-                <label for="lastName" class="form-label">Last Name</label>
-                <input type="text" class="form-control" id="lastname" aria-describedby="emailHelp"/>
-              </div>
-              <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1"/>
+              
+              <div class="mb-3 col-sm-6">
+                <label for="firstName" class="form-label">First Name</label>
+                <input type="text" class="form-control" id="firstname" name="firstname" onblur="checkFirstName();"/>
               </div>
 
-              <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Password (Again)</label>
-                <input type="password" class="form-control" id="exampleInputPassword12"/>
+              <div class="mb-3 col-sm-6">
+                <label for="lastName" class="form-label">Last Name</label>
+                <input type="text" class="form-control" id="lastname" name="lastname" onblur="checkLastName();"/>
               </div>
+
+              <div class="mb-3 col-sm-6">
+                <label for="dob" class="form-label">Date of birth</label>
+                <input type="text" class="form-control" id="dateofbirth" name="dateofbirth" onblur="checkDateOfBirth();"/>
+              </div>
+
+              <div class="mb-3 col-sm-6">
+                <label for="gender form-label">Gender:</label>
+                <div class="radio">
+                <input type="radio" name="gender" id="gender1" autocomplete="off"  value="male" checked/> <span>Male</span>
+                <input type="radio" name="gender" id="gender2" autocomplete="off" value="female"/> <span>Female</span>
+            </div>
+            </div>
+
+              <div class="mb-3 col-sm-6">
+                <label for="nin" class="form-label">NIN</label>
+                <input type="text" class="form-control" id="nin" name="nin" onblur="checkNin();"/>
+              </div>
+
+              <div class="mb-3 col-sm-6">
+                <label for="telephone" class="form-label">Phone Number</label>
+                <input type="text" class="form-control" id="telephone" name="telephone" onblur="checkPhoneNumber();"/>
+              </div>
+
+              <div class="mb-3 col-sm-6">
+                <label for="activity" class="form-label">Farming Activity</label>
+                <input type="text" class="form-control" id="activity" name="activity" onblur="checkFarmingActivity();"/>
+              </div>
+
+              <div class="mb-3 col-sm-6">
+                <label for="regdate" class="form-label">Date of Registration</label>
+                <input type="text" class="form-control" id="regdate" name="regdate" onblur="checkRegDate();"/>
+              </div>
+              
+              <div class="mb-3 col-sm-6">
+                <label for="password1" class="form-label">Password</label>
+                <input type="password" class="form-control" id="password1" name="password1"/>
+              </div>
+            
+
+              <div class="mb-3 col-sm-6">
+                <label for="password2" class="form-label">Password (Again)</label>
+                <input type="password" class="form-control" id="password2" name="password2" onblur="checkPassword();"/>
+              </div>
+            </div>
+
               <div class="mb-3 form-check">
                 <input type="checkbox" class="form-check-input" id="exampleCheck1" />
                 <label class="form-check-label" for="exampleCheck1">Check me out</label>
@@ -89,11 +135,10 @@
               <button type="submit" class="btn btn-primary">Submit</button>
             </form>
           </div>
-        
     </div>
   </div>
-
-  <script src="bootstrap/js/bootstrap.bundle.js"></script>
+  
 </body>
-
+<script src="/public/js/bootstrapjs/bootstrap.bundle.js"></script>
+<script src="/public/js/validation.js"></script>
 </html>

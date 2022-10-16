@@ -13,6 +13,9 @@ const expressSession = require('express-session')({
   //cookie:{ maxAge:60*60*1000},  
 });
 
+//Import the user model
+const Registration = require('./models/User')
+
 // Importing route files
 const registrationRoutes = require('./routes/registerRoutes');
 
@@ -48,12 +51,15 @@ app.use(expressSession);
 //Passport configuration middleware
 app.use(passport.initialize());
 app.use(passport.session());
+passport.use(Registration.createStrategy());
+passport.serializeUser(Registration.serializeUser());
+passport.deserializeUser(Registration.deserializeUser());
 
 // To parse URL encoded data
 app.use(express.urlencoded({ extended: false }));
 
 //Routes
-app.use('/user', registrationRoutes);
+app.use('/', registrationRoutes);
 
 
 
@@ -63,11 +69,11 @@ app.get("/", (req, res) => {
 });
 
 // Rendering pug file
-app.get('/registering', (req, res) => {
+app.get('/register', (req, res) => {
   res.render('registration');
 });
   
-app.post("/registering", (req, res) => {
+app.post("/register", (req, res) => {
   console.log(req.body);
  res.redirect("/");
 });

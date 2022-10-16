@@ -3,13 +3,13 @@ head
   meta(charset='UTF-8')
   meta(http-equiv='X-UA-Compatible' content='IE=edge')
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
-  link(rel='stylesheet' href='./css/bootstrapcss/bootstrap.css')
-  link(rel='stylesheet' href='./css/main.css')
+  link(rel='stylesheet' href="./css/bootstrapcss/bootstrap.css")
+  link(rel='stylesheet' href="./css/main.css")
   title Ufarm
 body(style='background-image: url(./images/UFARM_login_page.png); background-size: cover;')
   nav.navbar.navbar-expand-lg
     .container-fluid(style='margin-left: 70px; margin-top: 0px; font-size: 25px;')
-      a.navbar-brand(href='#')
+      a.navbar-brand(href='/index.html')
         img(src='./images/U+FARM+Logo.png' width='160px')
       button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
         span.navbar-toggler-icon
@@ -32,8 +32,8 @@ body(style='background-image: url(./images/UFARM_login_page.png); background-siz
               li
                 a.dropdown-item(href='#') Sign up
           li.nav-item
-            a.nav-link(href='#') Contact
-  .col-3(style='margin-left: 100px; margin-top: 50px;')
+            a.nav-link(href='#') About
+  .col-6(style='margin-left: 100px; margin-top: 50px;')
     .register
       .card-header(style='font-size: 25px; text-align: center;')
         | Welcome to 
@@ -41,26 +41,53 @@ body(style='background-image: url(./images/UFARM_login_page.png); background-siz
       br
       p(style='font-size: 20px;') Register with us today
       .card-body(style='margin-top: 25px; font-size: 20px;')
-        form#register.form(method='post' name='registration' action='/registering')
-          .mb-3
-            label.form-label(for='exampleInputEmail1') Email address
-            input#exampleInputEmail1.form-control(type='email' aria-describedby='emailHelp' name='emailaddress')
-            #emailHelp.form-text
-              | We&apos;ll never share your email with anyone else.
-          .mb-3
-            label.form-label(for='exampleInputEmail1') First Name
-            input#firstname.form-control(type='text' aria-describedby='emailHelp' name='namefirst')
-          .mb-3
-            label.form-label(for='lastName') Last Name
-            input#lastname.form-control(type='text' aria-describedby='emailHelp' name='namelast')
-          .mb-3
-            label.form-label(for='exampleInputPassword1') Password
-            input#exampleInputPassword1.form-control(type='password' name='pwd')
-          .mb-3
-            label.form-label(for='exampleInputPassword1') Password (Again)
-            input#exampleInputPassword12.form-control(type='password' name='pwdagain')
+        form#register.form(method='post' name='registration' action='/register')
+          .row
+            .mb-3.col-sm-6
+              label.form-label(for='email1') Email address
+              input#email.form-control(type='email' name='email' onblur='checkEmail();')
+              #emailHelp.form-text
+                | We&apos;ll never share your email with anyone else.
+            .mb-3.col-sm-6
+              label.form-label(for='ward') Ward
+              input#ward.form-control(type='text' name='ward' onblur='checkWard();')
+            .mb-3.col-sm-6
+              label.form-label(for='firstName') First Name
+              input#firstname.form-control(type='text' name='firstname' onblur='checkFirstName();')
+            .mb-3.col-sm-6
+              label.form-label(for='lastName') Last Name
+              input#lastname.form-control(type='text' name='lastname' onblur='checkLastName();')
+            .mb-3.col-sm-6
+              label.form-label(for='dob') Date of birth
+              input#dateofbirth.form-control(type='text' name='dateofbirth' onblur='checkDateOfBirth();')
+            .mb-3.col-sm-6
+              label(for='gender form-label') Gender:
+              .radio
+                input#gender1(type='radio' name='gender' autocomplete='off' value='male' checked='')
+                span Male
+                input#gender2(type='radio' name='gender' autocomplete='off' value='female')
+                span Female
+            .mb-3.col-sm-6
+              label.form-label(for='nin') NIN
+              input#nin.form-control(type='text' name='nin' onblur='checkNin();')
+            .mb-3.col-sm-6
+              label.form-label(for='telephone') Phone Number
+              input#telephone.form-control(type='text' name='telephone' onblur='checkPhoneNumber();')
+            .mb-3.col-sm-6
+              label.form-label(for='activity') Farming Activity
+              input#activity.form-control(type='text' name='activity' onblur='checkFarmingActivity();')
+            .mb-3.col-sm-6
+              label.form-label(for='regdate') Date of Registration
+              input#regdate.form-control(type='text' name='regdate' onblur='checkRegDate();')
+            .mb-3.col-sm-6
+              label.form-label(for='password1') Password
+              input#password1.form-control(type='password' name='password')
+            .mb-3.col-sm-6
+              label.form-label(for='password2') Password (Again)
+              input#password2.form-control(type='password' name='passwords' onblur='checkPassword();')
           .mb-3.form-check
             input#exampleCheck1.form-check-input(type='checkbox')
             label.form-check-label(for='exampleCheck1') Check me out
           button.btn.btn-primary(type='submit') Submit
-script(src='bootstrap/js/bootstrap.bundle.js')
+script(src='./js/bootstrapjs/bootstrap.bundle.js')
+script(src='./js/validation.js')
